@@ -1,8 +1,8 @@
 import React from "react";
 import "./Features.css";
-import createclass from "./Images/createclass.jpeg";
-import quiz from "./Images/quiz.jpeg";
-import clock from "./Images/clock.jpeg";
+import createclass from "./Images/createclass.png";
+import quiz from "./Images/quiz.png";
+import clock from "./Images/clock.png";
 
 function Features() {
   return (

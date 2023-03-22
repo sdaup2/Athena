@@ -19,7 +19,6 @@ function Home() {
         answerOptions={["Golden", "Golden Retriever", "German Shepherd", "Cat"]}
       />
       <SignupPage /> */}
-      // Main page elements are below
       <Header />
       <Hero />
       <Features />
