@@ -45,7 +45,7 @@ button:hover {
 }
 
 p {
-  color: red;
+  color: #37709F;
   text-align: center;
   margin-top: 20px;
 }
@@ -74,5 +74,5 @@ a {
 }
 
 a:hover {
-  color: #005fa3;
+  color: #D4E7EF;
 }

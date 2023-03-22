@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import "./AboutUs.css";
 import jaceruth from "./Images/jaceruth.jpeg";
-import ealynnhsu from "./Images/ealynnhsu.jpeg";
+import ealynnhsu from "./Images/ealynnhsu.png";
 
 const AboutUs = () => {
   const teamMembers = [

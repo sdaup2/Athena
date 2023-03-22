@@ -29,7 +29,7 @@ header {
   }
   
   nav a:hover {
-    color: #0077b6;
+    color: #FFFFFF;
   }
   
   nav p {
@@ -44,7 +44,7 @@ header {
   }
   
   nav p:hover {
-    color: #0077b6;
+    color: #FFFFFF;
   }
   
   form {
@@ -62,7 +62,7 @@ header {
   }
   
   form button {
-    background-color: #0077b6;
+    background-color: #37709F;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -74,6 +74,6 @@ header {
   }
   
   form button:hover {
-    background-color: #005c8c;
+    background-color: #37709F;
   }
   

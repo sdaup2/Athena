@@ -1,5 +1,5 @@
 import React from "react";
-import iclickerweb from "./Images/iclickerweb.jpeg";
+import athenaweb from "./Images/athenaview.jpg";
 import "./Hero.css";
 
 function Hero() {
@@ -22,7 +22,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-image">
-        <img src={iclickerweb} alt="Athena in action" />
+        <img src={athenaweb} alt="Athena in action" />
       </div>
     </section>
   );
