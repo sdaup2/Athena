@@ -6,9 +6,14 @@
     height: 100vh;
   }
   
+  
   .question-container img {
-    max-width: 100%;
-  }
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    overflow: hidden;
+    opacity: 50%;
+  } 
   
   .question-container h2 {
     margin-top: 20px;

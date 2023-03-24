@@ -16,15 +16,15 @@ function Home() {
       {/* <MultipleChoice
         questionText="What type of dog do you have?"
         imageSrc={athena}
-        answerOptions={["Golden", "Golden Retriever", "German Shepherd", "Cat"]}
-      />
-      <SignupPage /> */}
+        answerOptions={["Lab", "Golden Retriever", "German Shepherd", "Cat"]}
+      /> */}
+      {/* <SignupPage />  */}
       <Header />
       <Hero />
       <Features />
-      <Testimonials />
-      <AboutUs />
-      <Footer />
+      {/* <Testimonials /> */}
+      {/* <AboutUs /> */}
+      <Footer /> 
     </div>
   );
 }

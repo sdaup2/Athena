@@ -78,12 +78,12 @@ function SignupPage() {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-        <label>Interests:</label>
+        {/* <label>Interests:</label>
         <input
           type="text"
           value={interests}
           onChange={(e) => setInterests(e.target.value)}
-        />
+        /> */}
         <div>
           <input
             type="checkbox"
