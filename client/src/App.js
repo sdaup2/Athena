@@ -4,9 +4,10 @@ import Home from "./Pages/Home";
 import QuestionSet from "./Pages/QuestionSet";
 import Classes from "./Pages/Classes";
 
-import LoginPage from "./components/LoginPage/LoginPage";
-import SignupPage from "./components/LoginPage/SignupPage";
-import LogSigPage from "./components/LoginPage/LogSigPage";
+// import LoginPage from "./components/LoginPage/LoginPage";
+// import SignupPage from "./components/LoginPage/SignupPage";
+import LogPage from "./components/LoginPage/LogPage";
+import SignPage from "./components/LoginPage/SignPage";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -17,9 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="classes" element={<Classes />} />
         <Route path="questionsets" element={<QuestionSet />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="signup" element={<SignupPage />} />
-        <Route path="logsig" element={<LogSigPage />} />
+        <Route path="login" element={<LogPage />} />
+        <Route path="signup" element={<SignPage />} />
       </Routes>
     </div>
   );

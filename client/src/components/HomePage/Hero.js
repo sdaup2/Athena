@@ -14,11 +14,11 @@ function Hero() {
           real time.
         </p>
         <div className="call-to-action">
-          <Link to="/logsig" className="button">
+          <Link to="/signup" className="button">
             Sign Up
           </Link>
 
-          <Link to="/logsig" className="button">
+          <Link to="/login" className="button">
             Log In
           </Link>
         </div>
