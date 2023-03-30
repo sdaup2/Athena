@@ -6,6 +6,7 @@ import Classes from "./Pages/Classes";
 
 import LoginPage from "./components/LoginPage/LoginPage";
 import SignupPage from "./components/LoginPage/SignupPage";
+import LogSigPage from "./components/LoginPage/LogSigPage";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="questionsets" element={<QuestionSet />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />
+        <Route path="logsig" element={<LogSigPage />} />
       </Routes>
     </div>
   );
