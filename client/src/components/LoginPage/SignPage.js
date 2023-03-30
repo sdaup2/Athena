@@ -1,15 +1,13 @@
 import React from "react";
 import Header from "../Navigation/Header";
 import Footer from "../Navigation/Footer";
-import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import AuthDetails from "./AuthDetails";
 
-function LogSigPage() {
+function SignPage() {
   return (
     <div>
       <Header />
-      <LoginPage />
       <SignupPage />
       <AuthDetails />
       <Footer />
@@ -17,4 +15,4 @@ function LogSigPage() {
   );
 }
 
-export default LogSigPage;
+export default SignPage;
