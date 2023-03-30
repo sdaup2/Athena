@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Home from "./Pages/Home";
 import QuestionSet from "./Pages/QuestionSet";
-// import Classes from "./Pages/Classes";
+import Classes from "./Pages/Classes";
 
 import LoginPage from "./components/LoginPage/LoginPage";
 import SignupPage from "./components/LoginPage/SignupPage";
@@ -14,7 +14,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="classes" element={<Classes />} /> */}
+        <Route path="classes" element={<Classes />} />
         <Route path="questionsets" element={<QuestionSet />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />

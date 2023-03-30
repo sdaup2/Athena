@@ -17,8 +17,7 @@ function Header() {
           </li>
           <li>
             {/* Endpoint to route to About component */}
-            {/* <Link to="/classes">Classes</Link> */}
-            <p>Classes</p>
+            <Link to="/classes">Classes</Link>
           </li>
           <li>
             {/* Endpoint to route to Contact Us component */}
