@@ -17,7 +17,7 @@ function LoginPage() {
       .catch((error) => {
         console.log(error);
       });
-    // setNavigateToDashboard(true);
+      
   };
 
   const handleSignup = (event) => {
