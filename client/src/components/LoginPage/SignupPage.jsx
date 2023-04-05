@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = (event) => {
     event.preventDefault();
@@ -17,11 +19,12 @@ function SignupPage() {
       .catch((error) => {
         console.log(error);
       });
-    // setNavigateToDashboard(true);
+    navigate("/")
   };
 
   const handleLogin = (event) => {
     event.preventDefault();
+    navigate("/")
     // Navigate to signup page
   };
 
