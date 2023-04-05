@@ -18,6 +18,7 @@ function LoginPage() {
         console.log(error);
       });
     // setNavigateToDashboard(true);
+
   };
 
   const handleSignup = (event) => {
