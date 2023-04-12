@@ -8,6 +8,7 @@ import Classes from "./Pages/Classes";
 // import SignupPage from "./components/LoginPage/SignupPage";
 import LogPage from "./components/LoginPage/LogPage";
 import SignPage from "./components/LoginPage/SignPage";
+import ClassWaitroomPage from "./Pages/ClassWaitroomPage";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="classes" element={<Classes />} />
         <Route path="questionsets" element={<QuestionSet />} />
+        <Route path="waitroom" element={<ClassWaitroomPage />} />
         <Route path="login" element={<LogPage />} />
         <Route path="signup" element={<SignPage />} />
       </Routes>
