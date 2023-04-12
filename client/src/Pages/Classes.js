@@ -1,13 +1,47 @@
-import React from "react";
-import Header from "../components/Navigation/Header";
-import Footer from "../components/Navigation/Footer";
+import React, { useState } from 'react';
+import ClassIcon from "../components/ClassIcon/ClassIcon";
+import Footer from '../components/Navigation/Footer';
+import './Classes.css';
+import Header from '../components/Navigation/Header';
 
 function Classes() {
+  const [classes, setClasses] = useState([]);
+
+  const handleAddClass = () => {
+    const name = window.prompt('Enter class name:');
+    const code = window.prompt('Enter class code:');
+  
+    if (name && code) {
+      const newClass = {
+        name: name,
+        code: code
+      };
+      setClasses([...classes, newClass]);
+    } else {
+      window.alert('Please enter a class name and class code.');
+    }
+  };
+
   return (
     <div>
-      <Header />
-      <Footer />
+    <Header />
+      <div className="classes-page">
+        <h1>Classes</h1>
+        <div className="join-create-class">
+          <button onClick={handleAddClass}>Join Class</button>
+          <button onClick={handleAddClass}>Create Class</button>
+        </div>
+        
+        <div className="class-list">
+          {classes.map((c, i) => (
+            <ClassIcon key={i} name={c.name} code={c.code} />
+          ))}
+        </div>
+        
+      </div>
+    <Footer />
     </div>
   );
 }
+
 export default Classes;

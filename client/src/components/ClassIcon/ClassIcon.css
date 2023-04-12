@@ -1,0 +1,45 @@
+.class-component {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .class-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .class-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+  }
+  
+  .class-name {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+  }
+  
+  .class-code {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+  }
