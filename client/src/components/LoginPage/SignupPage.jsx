@@ -2,26 +2,27 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSignup = (event) => {
+  const handleSignup = async (event) => {
     event.preventDefault();
-    // Perform login logic here
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    // setNavigateToDashboard(true);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(userCredential);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleLogin = (event) => {
     event.preventDefault();
+    navigate("/")
     // Navigate to signup page
   };
 
