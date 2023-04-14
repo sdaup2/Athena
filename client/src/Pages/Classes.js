@@ -26,8 +26,8 @@ function Classes() {
   const handleJoinClass = () => {
     socket.emit("join");
     console.log("Joined Class Comms");
-    socket.on("back_end_join", () => {
-      console.log("Recieved on front end");
+    socket.on("back_end_join", (firebase_data) => {
+      console.log(firebase_data);
     });
   };
 
