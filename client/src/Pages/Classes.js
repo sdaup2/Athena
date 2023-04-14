@@ -3,6 +3,7 @@ import ClassIcon from "../components/ClassIcon/ClassIcon";
 import Footer from '../components/Navigation/Footer';
 import './Classes.css';
 import Header from '../components/Navigation/Header';
+import { socket } from '../socket';
 
 function Classes() {
   const [classes, setClasses] = useState([]);
@@ -22,13 +23,24 @@ function Classes() {
     }
   };
 
+  const handleJoinClass = () => {
+    socket.emit("join");
+    console.log("Joined Class Comms");
+    socket.on("back_end_join", () => {
+      console.log("Recieved on front end");
+    });
+  };
+
+  //add function to handleJoinClass
+  //do socket.emit there
+
   return (
     <div>
     <Header />
       <div className="classes-page">
         <h1>Classes</h1>
         <div className="join-create-class">
-          <button onClick={handleAddClass}>Join Class</button>
+          <button onClick={handleJoinClass}>Join Class</button>
           <button onClick={handleAddClass}>Create Class</button>
         </div>
         
