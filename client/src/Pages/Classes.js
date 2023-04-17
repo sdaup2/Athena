@@ -23,13 +23,21 @@ function Classes() {
     }
   };
 
+  let firebase_data_string = null;
   const handleJoinClass = () => {
     socket.emit("join");
     console.log("Joined Class Comms");
     socket.on("back_end_join", (firebase_data) => {
       console.log(firebase_data);
+      firebase_data_string = firebase_data
     });
   };
+
+  const getUserClassList = () => {
+    socket.on("all_user_classes", (TClist, SClist) => {
+      console.log("got event");
+    })
+  }
 
   //add function to handleJoinClass
   //do socket.emit there
