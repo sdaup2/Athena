@@ -21,7 +21,7 @@ function LoginPage() {
     }
     
     if (success) {
-      navigate("/");
+      navigate("/classes");
     } else {
       console.log("error");
     }
@@ -36,7 +36,7 @@ function LoginPage() {
   return (
     <div>
       <h1>Login to Athena</h1>
-      <form onSubmit={handleLogin}>
+      <form>
         <label>Email:</label>
         <input
           type="email"
@@ -54,7 +54,6 @@ function LoginPage() {
         <button type="submit" onClick={handleLogin}>
           Login
         </button>
-        <button onClick={handleSignup}>Sign Up</button>
       </form>
     </div>
   );
