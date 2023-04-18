@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import ClassIcon from "../components/ClassIcon/ClassIcon";
 import Footer from '../components/Navigation/Footer';
 import './Classes.css';
@@ -10,15 +10,15 @@ function Classes() {
 
   const handleAddClass = () => {
     const name = window.prompt('Enter class name:');
-    const code = window.prompt('Enter class code:');
   
-    if (name && code) {
+    if (name) {
+      socket.emit("add class", name);
       const newClass = {
         name: name,
-        code: code
       };
       setClasses([...classes, newClass]);
     } else {
+      
       window.alert('Please enter a class name and class code.');
     }
   };
@@ -27,20 +27,24 @@ function Classes() {
   const handleJoinClass = () => {
     socket.emit("join");
     console.log("Joined Class Comms");
-    socket.on("back_end_join", (firebase_data) => {
-      console.log(firebase_data);
-      firebase_data_string = firebase_data
-    });
   };
 
+  useEffect(() => {
+    // Call the getUserClassList function and update the classes state when the component mounts
+    getUserClassList();
+  }, []);
+
   const getUserClassList = () => {
+    socket.emit("get_class_list");
+    // TC list is all the classes a user is a teacher in
+    // SC list is all the classes a user is a student in
     socket.on("all_user_classes", (TClist, SClist) => {
-      console.log("got event");
+      const userClasses = [...TClist, ...SClist].map((c) => ({ name: c }));
+      console.log(userClasses);
+      setClasses(userClasses);
     })
   }
 
-  //add function to handleJoinClass
-  //do socket.emit there
 
   return (
     <div>
@@ -54,7 +58,7 @@ function Classes() {
         
         <div className="class-list">
           {classes.map((c, i) => (
-            <ClassIcon key={i} name={c.name} code={c.code} />
+            <ClassIcon key={i} name={c.name}/>
           ))}
         </div>
         
