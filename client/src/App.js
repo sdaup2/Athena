@@ -13,6 +13,7 @@ import Waiting from "./components/StudentClass/Waiting";
 import Live from "./components/StudentClass/Live";
 import NoSession from "./components/StudentClass/NoSession";
 import ClassWaitroomPage from "./Pages/ClassWaitroomPage";
+import ClassQuestions from "./Pages/ClassQuestions";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="classes" element={<Classes />} />
         <Route path="questionsets" element={<QuestionSet />} />
         <Route path="waitroom" element={<ClassWaitroomPage />} />
+        <Route path="class questions" element={<ClassQuestions />} />
         <Route path="login" element={<LogPage />} />
         <Route path="signup" element={<SignPage />} />
         <Route path="waiting" element={<Waiting />} />
