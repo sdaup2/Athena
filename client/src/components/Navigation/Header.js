@@ -25,6 +25,10 @@ function Header() {
           </li>
           <li>
             {/* Endpoint to route to Contact Us component */}
+            <Link to="/class questions">Class Questions</Link>
+          </li>
+          <li>
+            {/* Endpoint to route to Contact Us component */}
             <Link to="/waitroom">Waitroom</Link>
           </li>
         </ul>
