@@ -1,5 +1,5 @@
 import * as React from "react";
-import { socket } from './socket';
+import { socket } from "./socket";
 
 import Home from "./Pages/Home";
 import QuestionSet from "./Pages/QuestionSet";
@@ -9,16 +9,18 @@ import Classes from "./Pages/Classes";
 // import SignupPage from "./components/LoginPage/SignupPage";
 import LogPage from "./components/LoginPage/LogPage";
 import SignPage from "./components/LoginPage/SignPage";
+import Waiting from "./components/StudentClass/Waiting";
+import Live from "./components/StudentClass/Live";
+import NoSession from "./components/StudentClass/NoSession";
 import ClassWaitroomPage from "./Pages/ClassWaitroomPage";
 import ClassQuestions from "./Pages/ClassQuestions";
 
 import { Routes, Route } from "react-router-dom";
 
-
 function App() {
-  function receivedFunction(){
+  function receivedFunction() {
     console.log("received");
-  };
+  }
   socket.on("connect", receivedFunction());
   return (
     <div>
@@ -30,6 +32,9 @@ function App() {
         <Route path="class questions" element={<ClassQuestions />} />
         <Route path="login" element={<LogPage />} />
         <Route path="signup" element={<SignPage />} />
+        <Route path="waiting" element={<Waiting />} />
+        <Route path="live" element={<Live />} />
+        <Route path="nosession" element={<NoSession />} />
       </Routes>
     </div>
   );
