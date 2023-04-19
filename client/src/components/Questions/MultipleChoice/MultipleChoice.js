@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "./MultipleChoice.css"
-import athena from "../images/athena.png"
+import "./MultipleChoice.css";
 
 function MultipleChoiceQuestion(props) {
   const [selectedOption, setSelectedOption] = useState(null);
-  
+
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
