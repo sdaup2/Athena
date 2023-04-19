@@ -1,0 +1,15 @@
+.display-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .display-box p {
+    margin: 0;
+  }
+  
+  .display-box button {
+    margin-left: 10px;
+  }
