@@ -9,17 +9,15 @@ function SignupPage() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = (event) => {
+  const handleSignup = async (event) => {
     event.preventDefault();
-    // Perform login logic here
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    navigate("/")
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(userCredential);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleLogin = (event) => {
