@@ -1,4 +1,5 @@
 import * as React from "react";
+import { socket } from './socket';
 
 import Home from "./Pages/Home";
 import QuestionSet from "./Pages/QuestionSet";
@@ -14,6 +15,10 @@ import { Routes, Route } from "react-router-dom";
 
 
 function App() {
+  function receivedFunction(){
+    console.log("received");
+  };
+  socket.on("connect", receivedFunction());
   return (
     <div>
       <Routes>

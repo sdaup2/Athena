@@ -10,7 +10,7 @@ function ClassComponent(props) {
           {props.iconText}
         </div>
         <div className="class-name">{props.name}</div>
-        <div className="class-code">{props.code}</div>
+        {/* <div className="class-code">{props.code}</div> */}
       </button>
     </div>
   );
