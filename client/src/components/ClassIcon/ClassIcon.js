@@ -15,13 +15,22 @@ function ClassComponent(props) {
   let uid = null;
   if (user !== null) {
     uid = user.uid;
-  }
+  };
 
   function ClassIconHandler() {
     socket.emit("clicked on class", uid, props.name);
     console.log("asked back end for clases");
-    navigate("/");
-  }
+    socket.on("class and role", (role, class_code, class_name) => {
+      console.log(role);
+      if (role === "teacher") {
+        socket.emit("need class QS info", class_name, class_code);
+        navigate("/class questions");
+      } else {
+        socket.emit("need student info", class_name, class_code);
+        navigate("/nosession");
+      }
+    });
+  };
 
 
 

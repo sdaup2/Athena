@@ -46,6 +46,8 @@ function Classes() {
     // TC list is all the classes a user is a teacher in
     // SC list is all the classes a user is a student in
     socket.on("all_user_classes", (TClist, SClist) => {
+      TClist = TClist.sort();
+      SClist = SClist.sort();
       const userClasses = [...TClist, ...SClist].map((c) => ({ name: c }));
       console.log(userClasses);
       setClasses(userClasses);
