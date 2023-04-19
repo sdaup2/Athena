@@ -5,32 +5,36 @@ import { socket } from '../../socket';
 import { getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
-
+function socketStuff() {
+  socket.on("class and role", (role, class_code, class_name) => {
+    console.log(role);
+    const navigate = useNavigate();
+    if (role === "teacher") {
+      socket.emit("need class QS info", class_name, class_code);
+      navigate("/class questions");
+    } else {
+      socket.emit("need student info", class_name, class_code);
+      navigate("/nosession");
+    }
+  });
+}
 
 function ClassComponent(props) {
 
   const auth = getAuth();
   const user = auth.currentUser;
-  const navigate = useNavigate();
   let uid = null;
   if (user !== null) {
     uid = user.uid;
   };
 
-  function ClassIconHandler() {
+  const ClassIconHandler = async (event) => {
+    event.preventDefault();
     socket.emit("clicked on class", uid, props.name);
     console.log("asked back end for clases");
-    socket.on("class and role", (role, class_code, class_name) => {
-      console.log(role);
-      if (role === "teacher") {
-        socket.emit("need class QS info", class_name, class_code);
-        navigate("/class questions");
-      } else {
-        socket.emit("need student info", class_name, class_code);
-        navigate("/nosession");
-      }
-    });
+    socketStuff();
   };
+
 
 
 
