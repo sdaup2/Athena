@@ -4,9 +4,16 @@ import Footer from '../components/Navigation/Footer';
 import './Classes.css';
 import Header from '../components/Navigation/Header';
 import { socket } from '../socket';
+import { getAuth } from 'firebase/auth';
 
 function Classes() {
   const [classes, setClasses] = useState([]);
+  const auth = getAuth();
+  const user = auth.currentUser;
+  let uid = null;
+  if (user !== null) {
+    uid = user.uid;
+  }
 
   const handleAddClass = () => {
     const name = window.prompt('Enter class name:');
@@ -35,7 +42,7 @@ function Classes() {
   }, []);
 
   const getUserClassList = () => {
-    socket.emit("get_class_list");
+    socket.emit("get_class_list", uid);
     // TC list is all the classes a user is a teacher in
     // SC list is all the classes a user is a student in
     socket.on("all_user_classes", (TClist, SClist) => {
