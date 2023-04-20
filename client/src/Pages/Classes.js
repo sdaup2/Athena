@@ -20,9 +20,6 @@ function Classes() {
   
     if (name) {
       socket.emit("add class", uid, name);
-      const newClass = {
-        name: name,
-      };
       getUserClassList();
       //setClasses([...classes, newClass]);
     } else {

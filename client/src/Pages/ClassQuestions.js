@@ -9,8 +9,7 @@ import { useState } from "react";
 
 
 const Page = () => {
-
-  socket.on("QS info", (qsNames, class_code, class_name) => {
+  const populateQS = (qsNames, class_code, class_name) => {
     console.log("working on QS");
     let increment = 0;
     let qsNamesObject = []
@@ -29,19 +28,25 @@ const Page = () => {
       questionSets: qsNamesObject,
     }]
     updateClasses(classes_socket);
+  };
+
+  socket.on("QS info", (qsNames, class_code, class_name) => {
+    populateQS(qsNames, class_code, class_name);
   });
 
-  const [classes, setClasses] = useState([
-    
-  ]);
+  const [classes, setClasses] = useState([]);
   // Define a setter method to update the content of the classes array
   const updateClasses = (newClasses) => {
     setClasses(newClasses);
   };
 
   const handleAddSet = () => {
-    window.prompt("Hi brooke")
+    const qs_name = window.prompt("Enter the Question Set name:");
+    let spef_class = classes[0];
+    socket.emit("add question set", spef_class.className, spef_class.classCode, qs_name);
   }
+
+
   return (
     <div>
     <Header />
