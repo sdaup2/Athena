@@ -1,12 +1,49 @@
-import React from 'react';
-import './ClassIcon.css';
+import React from "react";
+import "./ClassIcon.css";
 import image from "../Navigation/athenalogo.png";
+import { socket } from "../../socket";
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
+let overall_role = null;
 
 function ClassComponent(props) {
+  const navigate = useNavigate();
+  const auth = getAuth();
+  const user = auth.currentUser;
+  let uid = null;
+  if (user !== null) {
+    uid = user.uid;
+  }
+
+  const ClassIconHandler = async (event) => {
+    event.preventDefault();
+    socket.emit("clicked on class", uid, props.name);
+    console.log("asked back end for clases");
+  };
+
+  socket
+    .off("class and role")
+    .on("class and role", (role, class_code, class_name) => {
+      console.log(role);
+      overall_role = role;
+      if (role === "teacher") {
+        socket.emit("need class QS info", class_name, class_code);
+        navigate("/class questions");
+      } else {
+        socket.emit("need student info", class_name, class_code);
+        navigate("/nosession");
+      }
+    });
+
   return (
     <div className="class-component">
       <button className="class-button">
-        <div className="class-icon" style={{ backgroundImage: `url(${image})` }}>
+        <div
+          className="class-icon"
+          onClick={ClassIconHandler}
+          style={{ backgroundImage: `url(${image})` }}
+        >
           {props.iconText}
         </div>
         <div className="class-name">{props.name}</div>
