@@ -1,10 +1,8 @@
 import React from "react";
 import QuestionIcon from "./QuestionIcon";
+import { socket } from "../../socket";
 
 
-const handleAddSet = () => {
-  window.prompt("Hi brooke")
-}
 
 const ClassComponent = ({ className, classCode, questionSets }) => {
   return (
@@ -15,9 +13,6 @@ const ClassComponent = ({ className, classCode, questionSets }) => {
         {questionSets.map((questionSet) => (
           <QuestionIcon key={questionSet.id} questionSet={questionSet} />
         ))}
-      </div>
-      <div className="add-question-set">
-        <button onClick={handleAddSet}>Add Question Set</button>
       </div>
     </div>
   );

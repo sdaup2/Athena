@@ -3,46 +3,62 @@ import ClassQuestionSets from "../components/ClassQuestionsSets/ClassQuestionSet
 import Footer from "../components/Navigation/Footer";
 import Header from "../components/Navigation/Header";
 import { socket } from "../socket";
+import { useState } from "react";
 
-socket.on("QS info", async (qsNames, class_code, class_name) => {
-  classes.at(1).classCode = class_code;
-  classes.at(1).className = class_name;
-  console.log(classes.at(1).classCode);
-  qsNames.forEach((qs_name) => {
-    //do nothing
-  });
-});
-let classes = [
-  {
-    id: 1,
-    className: "Class Name goes HERE", // CLASS NAME
-    classCode: "Class Code goes HERE", // CLASS CODE
-    questionSets:
-      //THIS IS WHERE YOU PUT THE LIST OF QUESTION SETS FOR CURRENT CLASS
 
-      [
-        { id: 4, name: "Question set name goes HERE" },
-        { id: 2, name: "Calculus" },
-        { id: 3, name: "Geometry" },
-      ],
-  },
-];
+
 
 const Page = () => {
+
+  socket.on("QS info", (qsNames, class_code, class_name) => {
+    console.log("working on QS");
+    let increment = 0;
+    let qsNamesObject = []
+    qsNames.forEach((qs_name) => {
+      let qsObject = {
+        id: increment,
+        name: qs_name,
+      }
+      qsNamesObject.push(qsObject);
+      increment += 1;
+    });
+    let classes_socket = [{
+      id: 0,
+      className: class_name,
+      classCode: class_code,
+      questionSets: qsNamesObject,
+    }]
+    updateClasses(classes_socket);
+  });
+
+  const [classes, setClasses] = useState([
+    
+  ]);
+  // Define a setter method to update the content of the classes array
+  const updateClasses = (newClasses) => {
+    setClasses(newClasses);
+  };
+
+  const handleAddSet = () => {
+    window.prompt("Hi brooke")
+  }
   return (
     <div>
-      <Header />
-      <div>
-        {classes.map((classObj) => (
-          <ClassQuestionSets
-            key={classObj.id}
-            className={classObj.className}
-            classCode={classObj.classCode}
-            questionSets={classObj.questionSets}
-          />
-        ))}
-      </div>
-      <Footer />
+    <Header />
+    <div>
+      {classes.map((classObj) => (
+        <ClassQuestionSets
+          key={classObj.id}
+          className={classObj.className}
+          classCode={classObj.classCode}
+          questionSets={classObj.questionSets}
+        />
+      ))}
+    </div>
+    <div className="add-question-set">
+        <button onClick={handleAddSet}>Add Question Set</button>
+    </div>
+    <Footer />
     </div>
   );
 };
