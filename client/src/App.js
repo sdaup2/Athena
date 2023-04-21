@@ -16,7 +16,7 @@ import ClassWaitroomPage from "./Pages/ClassWaitroomPage";
 import ClassQuestions from "./Pages/ClassQuestions";
 import ClassQuestionView from "./Pages/ClassQuestionView";
 import { Routes, Route } from "react-router-dom";
-import UserSettings from "./Pages/UserSettings";
+//import UserSettings from "./Pages/UserSettings";
 
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
         <Route path="waiting" element={<Waiting />} />
         <Route path="live" element={<Live />} />
         <Route path="nosession" element={<NoSession />} />
-        <Route path="usersettings" element={ <UserSettings /> } />
+        
       </Routes>
     </div>
   );
