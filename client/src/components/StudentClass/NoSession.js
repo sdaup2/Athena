@@ -8,16 +8,21 @@ import { useState } from "react";
 function NoSession() {
   const navigate = useNavigate();
   const [class_name, setClassName] = useState([]);
+  let overall_class_code = null;
 
   socket.on("sending for student nav", (class_name, class_code) => {
     setClassName(class_name);
+    overall_class_code = class_code
   });
 
   socket
     .off("teacher started session")
-    .on("teacher started session", () => {
+    .on("teacher started session", (class_code) => {
       console.log("teacher started session");
-      navigate("/waiting");
+      if (overall_class_code === class_code) {
+        socket.emit("need to join room", class_code);
+        navigate("/waiting");
+      }
   });
 
   return (
