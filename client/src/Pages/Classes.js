@@ -19,21 +19,23 @@ function Classes() {
     const name = window.prompt('Enter class name:');
   
     if (name) {
-      socket.emit("add class", name);
-      const newClass = {
-        name: name,
-      };
-      setClasses([...classes, newClass]);
+      socket.emit("add class", uid, name);
+      getUserClassList();
+      //setClasses([...classes, newClass]);
     } else {
       
       window.alert('Please enter a class name and class code.');
     }
   };
 
-  let firebase_data_string = null;
   const handleJoinClass = () => {
-    socket.emit("join");
-    console.log("Joined Class Comms");
+    const class_code = window.prompt('Enter class code:');
+    if (class_code) {
+      socket.emit("join", uid, class_code);
+      console.log("Joined Class Comms");
+      getUserClassList();
+    }
+
   };
 
   useEffect(() => {
