@@ -1,23 +1,47 @@
 import React from "react";
 import ClassQuestionSets from "../components/ClassQuestionsSets/ClassQuestionSets";
 import Footer from "../components/Navigation/Footer";
-import Header from '../components/Navigation/Header';
+import Header from "../components/Navigation/Header";
+import { socket } from "../socket";
+import { useState } from "react";
 
 
-const classes = [
-  {
-    id: 1,
-    className: "Mathematics",
-    classCode: "MATH101",
-    questionSets: [
-      { id: 1, name: "Algebra" },
-      { id: 2, name: "Calculus" },
-      { id: 3, name: "Geometry" },
-    ],
-  },
-];
+
 
 const Page = () => {
+
+  socket.on("QS info", (qsNames, class_code, class_name) => {
+    console.log("working on QS");
+    let increment = 0;
+    let qsNamesObject = []
+    qsNames.forEach((qs_name) => {
+      let qsObject = {
+        id: increment,
+        name: qs_name,
+      }
+      qsNamesObject.push(qsObject);
+      increment += 1;
+    });
+    let classes_socket = [{
+      id: 0,
+      className: class_name,
+      classCode: class_code,
+      questionSets: qsNamesObject,
+    }]
+    updateClasses(classes_socket);
+  });
+
+  const [classes, setClasses] = useState([
+    
+  ]);
+  // Define a setter method to update the content of the classes array
+  const updateClasses = (newClasses) => {
+    setClasses(newClasses);
+  };
+
+  const handleAddSet = () => {
+    window.prompt("Hi brooke")
+  }
   return (
     <div>
     <Header />
@@ -30,6 +54,9 @@ const Page = () => {
           questionSets={classObj.questionSets}
         />
       ))}
+    </div>
+    <div className="add-question-set">
+        <button onClick={handleAddSet}>Add Question Set</button>
     </div>
     <Footer />
     </div>

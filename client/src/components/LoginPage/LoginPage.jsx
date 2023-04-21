@@ -27,11 +27,7 @@ function LoginPage() {
     }
   };
 
-  const handleSignup = (event) => {
-    event.preventDefault();
-    // Navigate to signup page
-    navigate("/")
-  };
+
 
   return (
     <div>
@@ -60,3 +56,4 @@ function LoginPage() {
 }
 
 export default LoginPage;
+

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ClassroomWaitroom from "../components/ClassWaitroom/ClassWaitroom";
+import { socket } from "../socket";
 
 const App = () => {
     const [classCode, setClassCode] = useState('ABC123');
@@ -11,6 +12,7 @@ const App = () => {
   
     const handleStartSession = () => {
       // Handle starting the session
+      socket.emit("starting_session");
     };
   
     const handleCancel = () => {
