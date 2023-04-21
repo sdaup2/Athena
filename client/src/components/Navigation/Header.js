@@ -7,7 +7,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <img src={athenalogo} alt="Athena logo" />
+        <Link to="/"><img src={athenalogo} alt="Athena logo" /></Link>
       </div>
       <nav>
         <ul>
@@ -16,16 +16,21 @@ function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            {/* Endpoint to route to About component */}
+            {/* Endpoint to route to Classes component */}
             <Link to="/classes">Classes</Link>
           </li>
           <li>
-            {/* Endpoint to route to Contact Us component */}
+            {/* Endpoint to route to Question Sets component */}
             <Link to="/questionsets">Questions Sets</Link>
           </li>
           <li>
             {/* Endpoint to route to Contact Us component */}
             <Link to="/class questions">Class Questions</Link>
+          </li>
+          
+          <li>
+            {/* Endpoint to route to Contact Us component */}
+            <Link to="/view">Class Q View</Link>
           </li>
           <li>
             {/* Endpoint to route to Contact Us component */}
