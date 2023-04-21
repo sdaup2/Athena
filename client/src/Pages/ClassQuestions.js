@@ -4,11 +4,13 @@ import Footer from "../components/Navigation/Footer";
 import Header from "../components/Navigation/Header";
 import { socket } from "../socket";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Page = () => {
+  const navigate = useNavigate();
   const populateQS = (qsNames, class_code, class_name) => {
     console.log("working on QS");
     let increment = 0;
@@ -33,6 +35,13 @@ const Page = () => {
   socket.on("QS info", (qsNames, class_code, class_name) => {
     populateQS(qsNames, class_code, class_name);
   });
+
+  socket
+    .off("teacher started session")
+    .on("teacher started session", (class_code) => {
+      socket.emit("for session nav", class_code);
+      navigate("/waitroom");
+  })
 
   const [classes, setClasses] = useState([]);
   // Define a setter method to update the content of the classes array
