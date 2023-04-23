@@ -21,7 +21,7 @@ function Header() {
           </li>
           <li>
             {/* Endpoint to route to Question Sets component */}
-            <Link to="/questionsets">Questions Sets</Link>
+            <Link to="/questionsets">SandBox</Link>
           </li>
           <li>
             {/* Endpoint to route to Contact Us component */}
