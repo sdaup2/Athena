@@ -1,0 +1,21 @@
+.show-box {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #37709F;
+    padding: 10px;
+  }
+  
+  .show-box p {
+    margin: 0;
+  }
+  
+  .show-box button {
+    margin-left: 10px;
+  }
+
+p {
+    color: #000000;
+    size: 30px;
+    font-weight: bold;
+}
