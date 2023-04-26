@@ -1,12 +1,28 @@
 import React from "react";
 import "./QuestionIcon.css";
+import { socket } from "../../socket";
 
 const QuestionSet = ({ questionSet }) => {
+  let class_code = null;
+  socket.on("QS info", (qsNames, spef_class_code, class_name) => {
+    class_code = spef_class_code
+  });
+
+  const handleView = () => {
+    socket.emit("need all questions in set", questionSet.name);
+  };
+
+  const handleStart = () => {
+    socket.emit("starting session", questionSet.name, class_code)
+  }
+
   return (
-    <div className="display-box">
-      <p>{questionSet.name}</p>
-      <button>View</button>
-      <button>Start</button>
+    <div>
+      <div className="display-box">
+        <p>{questionSet.name}</p>
+        <button onClick = {handleView}>View</button>
+        <button onClick = {handleStart}>Start</button>
+      </div>
     </div>
   );
 };

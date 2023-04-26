@@ -13,6 +13,7 @@
   .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    margin-top: 10px;
   }
   
   .hero p {
@@ -24,6 +25,7 @@
   .call-to-action {
     display: flex;
     gap: 20px;
+    justify-content: center;
   }
   
   .button {
