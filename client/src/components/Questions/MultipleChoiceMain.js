@@ -29,9 +29,9 @@ function Classes() {
         </div>
 
         <MultipleChoice
-          questionText="What type of dog do you have?"
+          questionText="HARD CODED"
           imageSrc={athena}
-          answerOptions={["Lab", "Golden Retriever", "German Shepherd", "Cat"]}
+          answerOptions={["HARD", "CODED", "HARD", "CODED"]}
         />
       </div>
       <Footer />
