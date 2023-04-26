@@ -15,7 +15,7 @@ import NoSession from "./components/StudentClass/NoSession";
 import ClassWaitroomPage from "./Pages/ClassWaitroomPage";
 import ClassQuestions from "./Pages/ClassQuestions";
 import ClassQuestionView from "./Pages/ClassQuestionView";
-import MultipleChoice from "./components/Questions/MultipleChoice/MultipleChoice";
+import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain";
 import { Routes, Route } from "react-router-dom";
 //import UserSettings from "./Pages/UserSettings";
 
@@ -38,7 +38,7 @@ function App() {
         <Route path="waiting" element={<Waiting />} />
         <Route path="live" element={<Live />} />
         <Route path="nosession" element={<NoSession />} />
-        <Route path="multiplechoice" element={<MultipleChoice />} />
+        <Route path="multiplechoice" element={<MultipleChoiceMain />} />
       </Routes>
     </div>
   );
