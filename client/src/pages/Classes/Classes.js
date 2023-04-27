@@ -1,9 +1,9 @@
 import React, { useState , useEffect } from 'react';
-import ClassIcon from "../components/ClassIcon/ClassIcon";
-import Footer from '../components/Navigation/Footer';
+import ClassIcon from "../../components/ClassIcon/ClassIcon";
+import Footer from '../../components/Navigation/Footer';
 import './Classes.css';
-import Header from '../components/Navigation/Header';
-import { socket } from '../socket';
+import Header from '../../components/Navigation/Header';
+import { socket } from '../../socket';
 import { getAuth } from 'firebase/auth';
 
 function Classes() {

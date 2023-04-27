@@ -1,5 +1,5 @@
 import React from "react";
-import athenalogo from "./athenalogo.png";
+import athenalogo from "../../assets/athenalogo.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
@@ -38,10 +38,6 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <form>
-        <input type="text" placeholder="Search classes and question sets" />
-        <button type="submit">Search</button>
-      </form>
     </header>
   );
 }

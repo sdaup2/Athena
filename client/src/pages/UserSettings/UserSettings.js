@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import Header from "../components/Navigation/Header";
-import Footer from "../components/Navigation/Footer";
+import Header from "../../components/Navigation/Header";
+import Footer from "../../components/Navigation/Footer";
 import "./UserSettings.css";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 import {updateEmail} from "firebase/auth";
 
 function UserSettings() {

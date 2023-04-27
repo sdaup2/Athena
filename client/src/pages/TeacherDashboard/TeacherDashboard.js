@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from "../Navigation/Header";
+import Header from "../../components/Navigation/Header";
 import Sidebar from "./TeacherDashboard/Sidebar";
 import TeacherDashboardMainContent from "./TeacherDashboard/TeacherDashboardMainContent";
-import Footer from "../Navigation/Footer";
+import Footer from "../../components/Navigation/Footer";
 
 function TeacherDashboard() {
   const [classDetails, setClassDetails] = useState(null);
