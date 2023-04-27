@@ -3,7 +3,7 @@ import Header from "../components/Navigation/Header";
 import Footer from "../components/Navigation/Footer";
 import MultipleChoice from "../components/Questions/MultipleChoice/MultipleChoice";
 import athena from "../components/Questions/images/athena.png";
-import StudentAnswersDisplay from "../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
+import {StudentAnswersDisplay} from "../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
 
 
 const testMap = {
@@ -49,6 +49,7 @@ function QuestionSet() {
       <StudentAnswersDisplay
         question="What is the Capital of France?"
         answerMap={testMap}
+        correctAnswer="D"
       />
       {/* <MultipleChoice
         questionText="What type of dog do you have?"
