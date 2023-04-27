@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ClassroomWaitroom from "../components/ClassWaitroom/ClassWaitroom";
-import { socket } from "../socket";
+import ClassroomWaitroom from "./ClassWaitroom";
+import { socket } from "../../socket";
 
+/** What it looks like when students are waiting for a session to begin */
 const App = () => {
     const [classCode, setClassCode] = useState([]);
     const [users, setUsers] = useState([

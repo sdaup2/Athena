@@ -1,9 +1,8 @@
 
 import React from 'react';
-import Footer from '../Navigation/Footer';
-import Header from '../Navigation/Header';
+import Footer from '../../components/Navigation/Footer';
+import Header from '../../components/Navigation/Header';
 import './ClassWaitroom.css'
-
 
 const ClassroomWaitroom = ({ classCode, users, onStartSession, onCancel }) => {
   return (

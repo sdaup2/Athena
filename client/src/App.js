@@ -1,21 +1,20 @@
 import * as React from "react";
 import { socket } from "./socket";
 
-import Home from "./Pages/Home";
-import QuestionSet from "./Pages/QuestionSet";
-import Classes from "./Pages/Classes";
+import Home from "./pages/HomePage/Home";
+import QuestionSet from "./pages/QuestionSet/QuestionSet";
+import Classes from "./pages/Classes/Classes";
 
 // import LoginPage from "./components/LoginPage/LoginPage";
 // import SignupPage from "./components/LoginPage/SignupPage";
-import LogPage from "./components/LoginPage/LogPage";
-import SignPage from "./components/LoginPage/SignPage";
-import Waiting from "./components/StudentClass/Waiting";
-import Live from "./components/StudentClass/Live";
-import NoSession from "./components/StudentClass/NoSession";
-import ClassWaitroomPage from "./Pages/ClassWaitroomPage";
-import ClassQuestions from "./Pages/ClassQuestions";
-import ClassQuestionView from "./Pages/ClassQuestionView";
-import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain";
+import LogPage from "./pages/LoginPage/LogPage";
+import SignPage from "./pages/LoginPage/SignPage";
+import Waiting from "./components/StudentClassSession/Waiting";
+import Live from "./components/StudentClassSession/Live";
+import NoSession from "./components/StudentClassSession/NoSession";
+import ClassWaitroomPage from "./pages/ClassWaitroom/ClassWaitroomPage";
+import ClassQuestions from "./pages/ClassQuestions/ClassQuestions";
+import ClassQuestionView from "./pages/ClassQuestionView/ClassQuestionView";
 import { Routes, Route } from "react-router-dom";
 //import UserSettings from "./Pages/UserSettings";
 

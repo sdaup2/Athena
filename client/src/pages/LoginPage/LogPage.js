@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../Navigation/Header";
-import Footer from "../Navigation/Footer";
+import Header from "../../components/Navigation/Header";
+import Footer from "../../components/Navigation/Footer";
 import LoginPage from "./LoginPage";
 import AuthDetails from "./AuthDetails";
 

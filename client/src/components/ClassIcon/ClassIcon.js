@@ -1,6 +1,6 @@
 import React from "react";
 import "./ClassIcon.css";
-import image from "../Navigation/athenalogo.png";
+import image from "../../assets/athenalogo.png";
 import { socket } from "../../socket";
 import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";

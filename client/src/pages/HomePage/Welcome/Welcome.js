@@ -1,9 +1,9 @@
 import React from "react";
-import athenaweb from "./Images/athenaview.jpg";
-import "./Hero.css";
+import athenaweb from "../Images/athenaview.jpg";
+import "./Welcome.css";
 import { Link } from "react-router-dom";
 
-function Hero() {
+function MainDisplay() {
   return (
     <section className="hero">
       <div className="hero-content">
@@ -30,4 +30,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default MainDisplay;

@@ -1,9 +1,9 @@
 import React from "react";
-import { socket } from "../../socket";
+// import { socket } from "../../socket";
 import Footer from "../Navigation/Footer";
 import Header from "../Navigation/Header";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
 
 function Waiting() {
 
