@@ -41,7 +41,7 @@ const Page = () => {
     .on("teacher started session", (class_code) => {
       socket.emit("for session nav", class_code);
       navigate("/waitroom");
-  })
+  });
 
   const [classes, setClasses] = useState([]);
   // Define a setter method to update the content of the classes array
