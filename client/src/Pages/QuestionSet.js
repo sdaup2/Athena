@@ -4,6 +4,7 @@ import Footer from "../components/Navigation/Footer";
 import MultipleChoice from "../components/Questions/MultipleChoice/MultipleChoice";
 import athena from "../components/Questions/images/athena.png";
 import {StudentAnswersDisplay} from "../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
+import FreeResponse from "../components/Questions/FreeResponse/FreeResponse";
 
 
 const testMap = {
@@ -46,11 +47,12 @@ function QuestionSet() {
     <div>
       <Header />
       {/* Code for student answer display component. Will take in a question and a map of responses for user to display */}
-      <StudentAnswersDisplay
+      {/* <StudentAnswersDisplay
         question="What is the Capital of France?"
         answerMap={testMap}
         correctAnswer="D"
-      />
+      /> */}
+      <FreeResponse question="This is a test"/>
       {/* <MultipleChoice
         questionText="What type of dog do you have?"
         imageSrc={athena}
