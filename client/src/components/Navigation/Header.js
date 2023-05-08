@@ -36,6 +36,10 @@ function Header() {
             {/* Endpoint to route to Contact Us component */}
             <Link to="/waitroom">Waitroom</Link>
           </li>
+          <li>
+            {/* Endpoint to route to Contact Us component */}
+            <Link to="/settings">Settings</Link>
+          </li>
         </ul>
       </nav>
     </header>

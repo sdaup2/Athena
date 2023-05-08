@@ -1,54 +1,35 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Header from "../../components/Navigation/Header";
 import Footer from "../../components/Navigation/Footer";
 import "./UserSettings.css";
-import firebase from "../../firebase";
-import {updateEmail} from "firebase/auth";
+import {getAuth, updateEmail, updatePassword} from "firebase/auth";
 
 function UserSettings() {
-  const[email, setEmail] = useState("")
-  const[password, setPassword] = useState("");
-  /* useAuth */
-  const handleChangeUsername = async (event) => {
+  const [email, newEmail] = useState("");
+  const [password, newPassword] = useState("");
+  const auth = getAuth();
+
+  // updates the user's email in firebase
+  const handleEmailUpdate = async (event) => {
     event.preventDefault();
-    let success = true;
     try {
-      const user = firebase.auth().currentUser;
-      console.log(user.email)
-      const emailUpdate = await updateEmail(user, email)
+      updateEmail(auth.currentUser, email);
+      console.log(email)
     } catch (error) {
       console.log(error);
-      success = false;
     }
   }
 
-  const getEmail = async (event) => {
-    const user = firebase.auth().currentUser;
-  }
-
-  /*
-  const reauthenticate = (currentPassword) => {
-    var cred = EmailAuthProvider.credential(
-        user.email, currentPassword);
-    return user.reauthenticateWithCredential(cred);
-  };
-
-  const changePassword = (currentPassword, newPassword) => {
-    reauthenticate(currentPassword).then(() => {
-      var user = auth().currentUser;
-      user.updatePassword(newPassword).then(() => {
-        console.log("Password updated!");
-      }).catch((error) => { console.log(error); });
-    }).catch((error) => { console.log(error); });
-  }
-
-  const handleEmailChange = async (event) => {
+  // updates the user's password in firebase
+  const handlePasswordUpdate = async (event) => {
     event.preventDefault();
-    let success = true;
     try {
-      const userLog = await 
+      updatePassword(auth.currentUser, password);
+      console.log(password)
+    } catch (error) {
+      console.log(error);
     }
-    */
+  }
 
   return (
     <div>
@@ -58,18 +39,19 @@ function UserSettings() {
         <label>Email:</label>
         <input
           type="email"
-          placeholder = "New Email"
-          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          onChange={(e) => newEmail(e.target.value)}
         />
-        <button type="update" onClick = {handleChangeUsername}>
+        <button type="update" onClick={handleEmailUpdate}>
           Update Email
         </button>
         <label>Password:</label>
         <input
           type="password"
-          placeholder="New Password"
+          value={password}
+          onChange={(e) => newPassword(e.target.value)}
         />
-        <button type="update">
+        <button type="update" onClick={handlePasswordUpdate}>
           Update Password
         </button>
       </form>
