@@ -1,9 +1,19 @@
 import React from "react";
+<<<<<<< HEAD:client/src/pages/QuestionSet/QuestionSet.js
 import Header from "../../components/Navigation/Header";
 import Footer from "../../components/Navigation/Footer";
 import MultipleChoice from "../../components/Questions/MultipleChoice/MultipleChoice";
 import athena from "../../assets/athena.png";
 import StudentAnswersDisplay from "../../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
+=======
+import Header from "../components/Navigation/Header";
+import Footer from "../components/Navigation/Footer";
+import MultipleChoice from "../components/Questions/MultipleChoice/MultipleChoice";
+import athena from "../components/Questions/images/athena.png";
+import {StudentAnswersDisplay} from "../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
+import FreeResponse from "../components/Questions/FreeResponse/FreeResponse";
+
+>>>>>>> 69044a9e2c3101677837bd6caef41031fc532a44:client/src/Pages/QuestionSet.js
 
 /** Currently known as Sandbox in the Header */
 const testMap = {
@@ -46,10 +56,12 @@ function QuestionSet() {
     <div>
       <Header />
       {/* Code for student answer display component. Will take in a question and a map of responses for user to display */}
-      <StudentAnswersDisplay
+      {/* <StudentAnswersDisplay
         question="What is the Capital of France?"
         answerMap={testMap}
-      />
+        correctAnswer="D"
+      /> */}
+      <FreeResponse question="This is a test"/>
       {/* <MultipleChoice
         questionText="What type of dog do you have?"
         imageSrc={athena}
