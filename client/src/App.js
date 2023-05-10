@@ -16,6 +16,7 @@ import ClassWaitroomPage from "./pages/ClassWaitroom/ClassWaitroomPage";
 import ClassQuestions from "./pages/ClassQuestions/ClassQuestions";
 import ClassQuestionView from "./pages/ClassQuestionView/ClassQuestionView";
 import { Routes, Route } from "react-router-dom";
+import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain.js";
 //import UserSettings from "./Pages/UserSettings";
 
 function App() {

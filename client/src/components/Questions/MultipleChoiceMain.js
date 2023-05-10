@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MultipleChoice from "./MultipleChoice/MultipleChoice";
 import Footer from "../Navigation/Footer";
 import Header from "../Navigation/Header";
-import athena from "../Questions/images/athena.png";
+import athena from "../../assets/athena.png";
 
 // import { socket } from "../socket";
 // import { getAuth } from "firebase/auth";
