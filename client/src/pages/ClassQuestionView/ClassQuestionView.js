@@ -1,9 +1,9 @@
 import React from "react";
-import ClassQuestion from "../components/ClassQuestionsSets/ClassQuestionDisplay";
-import Footer from "../components/Navigation/Footer";
-import Header from '../components/Navigation/Header';
+import ClassQuestion from "../../components/ClassQuestionsSets/ClassQuestionDisplay";
+import Footer from "../../components/Navigation/Footer";
+import Header from '../../components/Navigation/Header';
 
-
+/**What a question set looks like when you click "view" on the specified question set, displays all questions */
 const currentQuestionSet = [
   {
     id: 1,

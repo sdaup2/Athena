@@ -1,7 +1,8 @@
 import React from "react";
 import QuestionAnswerIcon from "../QuestionAnswerIcon/QuestionAnswerIcon";
 
-const ClassComponent = ({ setName, questions }) => {
+/** The main display for the question pages */
+const ClassQuestionDisplay = ({ setName, questions }) => {
   return (
     <div>
       <div style = {{display: "inline", justify: "space-between", align: "center"}}>
@@ -17,4 +18,4 @@ const ClassComponent = ({ setName, questions }) => {
   );
 };
 
-export default ClassComponent;
+export default ClassQuestionDisplay;

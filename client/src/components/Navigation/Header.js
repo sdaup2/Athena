@@ -1,5 +1,5 @@
 import React from "react";
-import athenalogo from "./athenalogo.png";
+import athenalogo from "../../assets/athenalogo.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,9 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <Link to="/"><img src={athenalogo} alt="Athena logo" /></Link>
+        <Link to="/">
+          <img src={athenalogo} alt="Athena logo" />
+        </Link>
       </div>
       <nav>
         <ul>
@@ -27,7 +29,7 @@ function Header() {
             {/* Endpoint to route to Contact Us component */}
             <Link to="/class questions">Class Questions</Link>
           </li>
-          
+
           <li>
             {/* Endpoint to route to Contact Us component */}
             <Link to="/view">Class Q View</Link>
@@ -38,10 +40,6 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <form>
-        <input type="text" placeholder="Search classes and question sets" />
-        <button type="submit">Search</button>
-      </form>
     </header>
   );
 }

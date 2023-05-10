@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../components/Navigation/Header";
-import Footer from "../components/Navigation/Footer";
-import MultipleChoice from "../components/Questions/MultipleChoice/MultipleChoice";
-import athena from "../components/Questions/images/athena.png";
-import {StudentAnswersDisplay} from "../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
-import FreeResponse from "../components/Questions/FreeResponse/FreeResponse";
+import Header from "../../components/Navigation/Header";
+import Footer from "../../components/Navigation/Footer";
+import MultipleChoice from "../../components/Questions/MultipleChoice/MultipleChoice";
+import athena from "../../assets/athena.png";
+import StudentAnswersDisplay from "../../components/StudentAnswersDisplay/StudentAnswersDisplay.js"
 
 
+
+/** Currently known as Sandbox in the Header */
 const testMap = {
   "Jace": "A",
   "Brooke": "B",
@@ -52,7 +53,6 @@ function QuestionSet() {
         answerMap={testMap}
         correctAnswer="D"
       /> */}
-      <FreeResponse question="This is a test"/>
       {/* <MultipleChoice
         questionText="What type of dog do you have?"
         imageSrc={athena}

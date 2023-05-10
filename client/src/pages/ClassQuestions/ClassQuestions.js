@@ -1,15 +1,12 @@
 import React from "react";
-import ClassQuestionSets from "../components/ClassQuestionsSets/ClassQuestionSets";
-import Footer from "../components/Navigation/Footer";
-import Header from "../components/Navigation/Header";
-import { socket } from "../socket";
+import ClassQuestionSets from "../../components/ClassQuestionsSets/ClassQuestionSets";
+import Footer from "../../components/Navigation/Footer";
+import Header from "../../components/Navigation/Header";
+import { socket } from "../../socket";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-const Page = () => {
+const ClassQuestions = () => {
   const navigate = useNavigate();
   const populateQS = (qsNames, class_code, class_name) => {
     console.log("working on QS");
@@ -41,7 +38,7 @@ const Page = () => {
     .on("teacher started session", (class_code) => {
       socket.emit("for session nav", class_code);
       navigate("/waitroom");
-  })
+  });
 
   const [classes, setClasses] = useState([]);
   // Define a setter method to update the content of the classes array
@@ -77,4 +74,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ClassQuestions;
