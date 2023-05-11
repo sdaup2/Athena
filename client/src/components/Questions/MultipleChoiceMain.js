@@ -12,26 +12,21 @@ function Classes() {
 
   const getQuestion = () => {};
 
+  //these are what you change brooke
+  const questionString = "HARD 1";
+  const imageConst = athena;
+  const answerOptionsString = ["HARD 2", "HARD 3", "HARD 4"];
+
   return (
     <div>
       <Header />
       <div>
         <h1>MultipleChoice</h1>
-        <div className="class-list">
-          {question.map((q, i) => (
-            <MultipleChoice
-              key={i}
-              questionText={q.text}
-              imageSrc={athena}
-              answerOptions={q.options}
-            />
-          ))}
-        </div>
 
         <MultipleChoice
-          questionText="HARD CODED"
-          imageSrc={athena}
-          answerOptions={["HARD", "CODED", "HARD", "CODED"]}
+          questionText={questionString}
+          imageSrc={imageConst}
+          answerOptions={answerOptionsString}
         />
       </div>
       <Footer />
