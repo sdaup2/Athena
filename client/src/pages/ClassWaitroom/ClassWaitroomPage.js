@@ -1,25 +1,34 @@
 import React, { useState } from "react";
 import ClassroomWaitroom from "./ClassWaitroom";
 import { socket } from "../../socket";
+import { useNavigate } from "react-router-dom";
 
 /** What it looks like when students are waiting for a session to begin */
 const App = () => {
 
-    socket.emit("get class info");
+    const navigate = useNavigate();
     const [classCode, setClassCode] = useState([]);
     const [users, setUsers] = useState([]);
 
-    socket.on("nav to waitroom", (class_object, student_list) => {
-      console.log(class_object);
-      setClassCode(class_object.Code);
-      const students_in_class = [student_list].map((c) => ({ name: c }));
-      console.log(students_in_class);
-      //setUsers(students_in_class);
-    });
+    socket
+      .off("nav to waitroom")
+      .on("nav to waitroom", (class_object) => {
+        console.log(class_object);
+        setClassCode(class_object.Code);
+      });
+
+    socket
+      .off("students in room list")
+      .on("studentd in room list", (student_list) => {
+        const students_in_class = [student_list].map((c) => ({ name: c }));
+        console.log(students_in_class);
+        setUsers(students_in_class);
+      });
   
     const handleStartSession = () => {
       // Handle starting the session
       socket.emit("starting questions");
+      navigate("/displayquestion")
       
     };
   
