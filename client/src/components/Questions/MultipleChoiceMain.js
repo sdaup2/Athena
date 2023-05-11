@@ -7,18 +7,7 @@ import { socket } from "../../socket";
 
 
 function MultipleChoiceMain() {
-  const [question, setQuestion] = useState([]);
 
-  const getQuestion = () => {};
-
-  socket
-    .off("next question")
-    .on("next question", (question_object) => {
-      let correctAnswers = question_object.CorrectAnswers;
-      let answerOptions = question_object.Options;
-      let questionText = question_object.QuestionText;
-      let imageSrc = athena;
-    });
 
   return (
     <div>
