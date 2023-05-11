@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4 col-md-4 col-sm-12">
             <div className="footer-widget">
-              <center><h4>Contact Us</h4></center>
+              <center><h3>Contact Us</h3></center>
               <ul className="list-unstyled contact-info">
                 <li>
                   <i className="fa fa-map-marker"></i>Kauffman Res. Center,
