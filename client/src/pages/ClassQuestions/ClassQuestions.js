@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 const ClassQuestions = () => {
   const navigate = useNavigate();
   const populateQS = (qsNames, class_code, class_name) => {
-    console.log("working on QS");
     let increment = 0;
     let qsNamesObject = []
     qsNames.forEach((qs_name) => {
@@ -35,8 +34,7 @@ const ClassQuestions = () => {
 
   socket
     .off("teacher started session")
-    .on("teacher started session", (class_code) => {
-      socket.emit("for session nav", class_code);
+    .on("teacher started session", () => {
       navigate("/waitroom");
   });
 
@@ -48,8 +46,7 @@ const ClassQuestions = () => {
 
   const handleAddSet = () => {
     const qs_name = window.prompt("Enter the Question Set name:");
-    let spef_class = classes[0];
-    socket.emit("add question set", spef_class.className, spef_class.classCode, qs_name);
+    socket.emit("add question set", qs_name);
   }
 
 

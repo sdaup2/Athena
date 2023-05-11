@@ -19,8 +19,7 @@ function Classes() {
     const name = window.prompt('Enter class name:');
   
     if (name) {
-      socket.emit("add class", uid, name);
-      getUserClassList();
+      socket.emit("add class", name);
       //setClasses([...classes, newClass]);
     } else {
       
@@ -31,9 +30,8 @@ function Classes() {
   const handleJoinClass = () => {
     const class_code = window.prompt('Enter class code:');
     if (class_code) {
-      socket.emit("join", uid, class_code);
+      socket.emit("join", class_code);
       console.log("Joined Class Comms");
-      getUserClassList();
     }
 
   };
@@ -44,7 +42,7 @@ function Classes() {
   }, []);
 
   const getUserClassList = () => {
-    socket.emit("get_class_list", uid);
+    socket.emit("get_class_list");
     // TC list is all the classes a user is a teacher in
     // SC list is all the classes a user is a student in
     socket.on("all_user_classes", (TClist, SClist) => {
