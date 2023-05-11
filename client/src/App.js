@@ -17,7 +17,8 @@ import ClassQuestions from "./pages/ClassQuestions/ClassQuestions";
 import ClassQuestionView from "./pages/ClassQuestionView/ClassQuestionView";
 import { Routes, Route } from "react-router-dom";
 import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain.js";
-//import UserSettings from "./Pages/UserSettings";
+import UserSettings from "./pages/UserSettings/UserSettings";
+import CreateQuestion from "./pages/ClassQuestions/CreateQuestion";
 
 function App() {
   function receivedFunction() {
@@ -39,6 +40,8 @@ function App() {
         <Route path="live" element={<Live />} />
         <Route path="nosession" element={<NoSession />} />
         <Route path="multiplechoice" element={<MultipleChoiceMain />} />
+        <Route path="usersettings" element={<UserSettings />} />
+        <Route path="createquestion" element={<CreateQuestion />} />
       </Routes>
     </div>
   );
