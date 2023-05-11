@@ -1,0 +1,22 @@
+Codebase Structure
+
+The codebase consists of two main repositories: 
+    - Athena, which controls the front-end components of the website.
+    - athena_backend, which controls the backend functionality. 
+
+The tech stack we used for our codebase is: 
+    - React on the front-end.
+    - Express on the backend.
+
+
+Deployment
+
+Before being able to deploy the codebase, the Firebase and NodeJS libraries must be locally installed. After installing these libraries, follow the steps below to run the codebase: 
+
+    - Open the athena_backend repository in a code editor and navigate to the    
+      terminal. 
+    - Type “npm start” to initiate the backend. 
+    - Open the Athena repository in a code editor and navigate to the terminal.
+    - Navigate to the client folder of the codebase (cd client).
+    - Type “npm start” to initiate the front-end. 
+    - A new tab should open up on your browser displaying the Athena website. 

@@ -11,9 +11,9 @@ const currentQuestionSet = [
     questions: [
       { id: 1, name: "What is your favorite color?", answers: ["a", "b", "c"] },
       { id: 2, name: "What color is the sky?", answers: ["a", "b", "c"] },
-      { id: 3, name: "Hnghhhhhhh?", answers: ["a", "b", "c"] },
-      { id: 4, name: "Hnghhhhhhh?", answers: ["a", "b", "c"] },
-      { id: 5, name: "Hnghhhhhhh?", answers: ["a", "b", "c"] },
+      { id: 3, name: "Question?", answers: ["a", "b", "c"] },
+      { id: 4, name: "Question?", answers: ["a", "b", "c"] },
+      { id: 5, name: "Question?", answers: ["a", "b", "c"] },
     ],
   },
 ];
