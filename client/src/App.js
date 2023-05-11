@@ -19,6 +19,7 @@ import { Routes, Route } from "react-router-dom";
 import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain.js";
 import UserSettings from "./pages/UserSettings/UserSettings";
 import CreateQuestion from "./pages/ClassQuestions/CreateQuestion";
+import DisplayQuestion from "./pages/ClassQuestions/DisplayQuestion";
 
 function App() {
   function receivedFunction() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="multiplechoice" element={<MultipleChoiceMain />} />
         <Route path="usersettings" element={<UserSettings />} />
         <Route path="createquestion" element={<CreateQuestion />} />
+        <Route path="displayquestion" element={<DisplayQuestion />} />
       </Routes>
     </div>
   );
