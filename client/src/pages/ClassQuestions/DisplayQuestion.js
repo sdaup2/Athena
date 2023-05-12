@@ -23,13 +23,15 @@ function DisplayQuestion() {
 
   socket
     .off("next question")
-    .on("next question", (question_object) => {
-      console.log("recieved next question");
-      let allAnswers = question_object.Options.concat(question_object.CorrectAnswers);
-      shuffle(allAnswers);
+    .on("next question", async (question_object) => {
+      console.log("recieved next question", JSON.stringify(question_object));
       setQuestionType(question_object.ResponseType);
-      setAnswerOptionsString(allAnswers);
       setQuestionString(question_object.QuestionText);
+      if (question_object.ResponseType === "MC") {
+        let allAnswers = question_object.Options.concat(question_object.CorrectAnswers);
+        shuffle(allAnswers);
+        setAnswerOptionsString(allAnswers);
+      };
     });
 
   socket 

@@ -4,6 +4,7 @@ import Footer from "../../components/Navigation/Footer";
 import "./StudentAnswerDisplayPage.css"
 import { StudentAnswersDisplay, checkAnswers } from "../../components/StudentAnswersDisplay/StudentAnswersDisplay";
 import { socket } from "../../socket";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -48,16 +49,21 @@ const testMap = {
 
 function StudentAnswersDisplayFunction() {
 
+  const navigate = useNavigate();
+
   const [answerMap, setAnswerMap] = useState({});
-  const [correctAnswers, setCorrectAnswers] = useState([]);
+  const [correctAnswers, setCorrectAnswers] = useState();
   const [questionText, setQuestionText] = useState();
 
 
   socket
     .off("next question")
     .on("next question", (question_object) => {
+      setAnswerMap({});
+      console.log(JSON.parse(JSON.stringify(question_object)));
+      console.log(question_object.QuestionText);
       setQuestionText(question_object.QuestionText);
-      setCorrectAnswers(question_object.CorrectAnswers);
+      setCorrectAnswers(question_object.CorrectAnswers[0]);
   });
   
   socket
@@ -74,8 +80,17 @@ function StudentAnswersDisplayFunction() {
       setAnswerMap(new_obj);
   });
 
+  socket
+    .off("teacher ended session")
+    .on("teacher ended session", () => {
+      navigate("/sessionend");
+    });
+
   const handleEndSession = () => {
+    console.log("ending session");
     socket.emit("end session");
+    navigate("/sessionend");
+    
   };
 
   const handleNextQuestion = () => {
@@ -89,7 +104,7 @@ function StudentAnswersDisplayFunction() {
       <StudentAnswersDisplay
         question={questionText}
         answerMap= {answerMap}
-        correctAnswer= {correctAnswers[0]}
+        correctAnswer= {correctAnswers}
       />
       <div className="button-group">
         <button className="quit-button" onClick = {handleEndSession}>Quit</button>
