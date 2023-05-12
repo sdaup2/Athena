@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./MultipleChoice.css";
 
+// the multiple choice question display
 function MultipleChoiceQuestion(props) {
   const [selectedOption, setSelectedOption] = useState(null);
 

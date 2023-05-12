@@ -6,6 +6,7 @@ import Header from '../../components/Navigation/Header';
 import { socket } from '../../socket';
 import { getAuth } from 'firebase/auth';
 
+// renders the Classes page for all users and allows students to join classes and teachers to create new classes
 function Classes() {
   const [classes, setClasses] = useState([]);
   const auth = getAuth();
@@ -15,6 +16,7 @@ function Classes() {
     uid = user.uid;
   }
 
+  // handles the creation of a new class
   const handleAddClass = () => {
     const name = window.prompt('Enter class name:');
   
@@ -27,6 +29,7 @@ function Classes() {
     }
   };
 
+  // handles a student joining a classroom based on the class code
   const handleJoinClass = () => {
     const class_code = window.prompt('Enter class code:');
     if (class_code) {

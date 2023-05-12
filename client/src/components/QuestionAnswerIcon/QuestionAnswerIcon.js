@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./QuestionAnswerIcon.css";
 
+// displays all the questions in the current question set
 const ListOfQuestions = ({ questionList }) => {
     const [selectedOption, setSelectedOption] = useState(null);
   

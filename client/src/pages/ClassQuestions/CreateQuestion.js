@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// handles a teacher adding a question to a question set
 function CreateQuestion() {
   const [questionType, setQuestionType] = useState("multipleChoice"); // default to multiple choice
   const [questionText, setQuestionText] = useState("");

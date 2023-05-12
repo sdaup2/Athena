@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 let overall_role = null;
 
+// handles how classes show up on the "classes" page after being called by the backend 
 function ClassComponent(props) {
   const navigate = useNavigate();
   const auth = getAuth();

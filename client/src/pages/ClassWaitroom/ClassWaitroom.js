@@ -4,6 +4,7 @@ import Footer from '../../components/Navigation/Footer';
 import Header from '../../components/Navigation/Header';
 import './ClassWaitroom.css'
 
+// What it looks like when a teacherhas opened a session but hasn't started it yet
 const ClassroomWaitroom = ({ classCode, users, onStartSession, onCancel }) => {
   return (
     <div>

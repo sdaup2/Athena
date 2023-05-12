@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ClassComponent from "../ClassQuestionDisplay";
-import QuestionAnswerIcon from "../QuestionIcon";
 
 describe("ClassComponent", () => {
     const mockQuestions = [

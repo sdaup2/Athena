@@ -4,6 +4,7 @@ import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+// handles functionality for signing up for Athena
 function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

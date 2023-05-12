@@ -4,6 +4,7 @@ import Footer from "../../components/Navigation/Footer";
 import LoginPage from "./LoginPage";
 import AuthDetails from "./AuthDetails";
 
+// generates the full login page 
 function LogPage() {
   return (
     <div>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
+// simple html formatting for Athena's footer, containing company information
 const Footer = () => {
   return (
     <footer className="footer">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./FreeResponse.css"
 
+// the free response question display
 const FreeResponse = ({ question }) => {
   const [response, setResponse] = useState('');
 

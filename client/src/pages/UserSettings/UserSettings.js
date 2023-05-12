@@ -4,6 +4,7 @@ import Footer from "../../components/Navigation/Footer";
 import "./UserSettings.css";
 import {getAuth, updateEmail, updatePassword} from "firebase/auth";
 
+// handles updating a user's email and password
 function UserSettings() {
   const [email, newEmail] = useState("");
   const [password, newPassword] = useState("");

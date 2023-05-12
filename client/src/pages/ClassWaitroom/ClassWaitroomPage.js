@@ -3,7 +3,7 @@ import ClassroomWaitroom from "./ClassWaitroom";
 import { socket } from "../../socket";
 import { useNavigate } from "react-router-dom";
 
-/** What it looks like when students are waiting for a session to begin */
+// What it looks like when students are waiting for a session to begin 
 const App = () => {
 
     const navigate = useNavigate();

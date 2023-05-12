@@ -5,6 +5,7 @@ import Header from "../Navigation/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+// what the student sees when they're waiting for the teacher to start a current session
 function Waiting() {
 
   socket.emit("get class info");

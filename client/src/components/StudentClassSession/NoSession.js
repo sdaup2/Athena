@@ -5,6 +5,7 @@ import Header from "../Navigation/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+// what a student sees if there isn't a session currently ongoing
 function NoSession() {
   const navigate = useNavigate();
   const [class_name, setClassName] = useState([]);

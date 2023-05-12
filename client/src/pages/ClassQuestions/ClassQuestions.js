@@ -6,6 +6,7 @@ import { socket } from "../../socket";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// the class's question sets (QS) page -- allows teachers to see their current QS and add new ones
 const ClassQuestions = () => {
   const navigate = useNavigate();
   const populateQS = (qsNames, class_code, class_name) => {
@@ -44,6 +45,7 @@ const ClassQuestions = () => {
     setClasses(newClasses);
   };
 
+  // adds a new question set to a class
   const handleAddSet = () => {
     const qs_name = window.prompt("Enter the Question Set name:");
     socket.emit("add question set", qs_name);

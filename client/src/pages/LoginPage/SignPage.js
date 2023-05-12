@@ -4,6 +4,7 @@ import Footer from "../../components/Navigation/Footer";
 import SignupPage from "./SignupPage";
 import AuthDetails from "./AuthDetails";
 
+// generates the sign up page
 function SignPage() {
   return (
     <div>

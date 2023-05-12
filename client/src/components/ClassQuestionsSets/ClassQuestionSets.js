@@ -2,8 +2,7 @@ import React from "react";
 import QuestionIcon from "./QuestionIcon";
 import { socket } from "../../socket";
 
-
-
+// controls how the question sets associated with a given class appear
 const ClassComponent = ({ className, classCode, questionSets }) => {
   return (
     <div>

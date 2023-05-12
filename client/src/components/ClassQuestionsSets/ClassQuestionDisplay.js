@@ -1,7 +1,7 @@
 import React from "react";
 import QuestionAnswerIcon from "../QuestionAnswerIcon/QuestionAnswerIcon";
 
-/** The main display for the question pages */
+// The main display for the question pages -- allows you add a new question to your question set
 const ClassQuestionDisplay = ({ setName, questions }) => {
   return (
     <div>

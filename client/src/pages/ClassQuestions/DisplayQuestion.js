@@ -6,6 +6,7 @@ import Header from "../../components/Navigation/Header";
 import athena from "../../assets/athena.png";
 import { socket } from "../../socket";
 
+// displays the current current question during a session
 function DisplayQuestion() {
   //change this to "MC" or "FR" and the page will change accordingly
 

@@ -3,6 +3,7 @@ import athenaweb from "../Images/athenaview.jpg";
 import "./Welcome.css";
 import { Link } from "react-router-dom";
 
+// the top segment of the home page -- where the login and sign-up buttons are located
 function MainDisplay() {
   return (
     <section className="hero">
