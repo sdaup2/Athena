@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { CSVLink } from "react-csv";
 import Header from "../../components/Navigation/Header";
 import Footer from "../../components/Navigation/Footer";
+import "./Styles/SessionEnd.css";
+
 
 function SessionEnd() {
   const [questions, setQuestions] = useState([
@@ -22,17 +24,20 @@ function SessionEnd() {
   return (
     <div>
       <Header />
-      <h1>Session ended</h1>
-      <h1>If you would like to download the answers, click below!</h1>
-      <h1>
-        <CSVLink
-          data={responses}
-          headers={questions}
-          filename={"responses.csv"}
-        >
-          Export CSV
-        </CSVLink>
-      </h1>
+      <div className="session-end-container">
+        <h1 className="session-ended">Session Ended</h1>
+        <h1 className="download">If you would like to download the answers, click below!</h1>
+        <h1>
+          <CSVLink
+            data={responses}
+            headers={questions}
+            filename={"responses.csv"}
+            className="csv-download"
+          >
+            Export CSV
+          </CSVLink>
+        </h1>
+      </div>
       <Footer />
     </div>
   );
