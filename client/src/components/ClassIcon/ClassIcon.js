@@ -18,20 +18,20 @@ function ClassComponent(props) {
 
   const ClassIconHandler = async (event) => {
     event.preventDefault();
-    socket.emit("clicked on class", uid, props.name);
+    socket.emit("clicked on class", props.name);
     console.log("asked back end for clases");
   };
 
   socket
     .off("class and role")
-    .on("class and role", (role, class_code, class_name) => {
+    .on("class and role", (role) => {
       console.log(role);
       overall_role = role;
       if (role === "teacher") {
-        socket.emit("need class QS info", class_name, class_code);
+        socket.emit("need class QS info");
         navigate("/class questions");
       } else {
-        socket.emit("need student info", class_name, class_code);
+        socket.emit("need student info");
         navigate("/nosession");
       }
     });

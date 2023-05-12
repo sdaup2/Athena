@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./MultipleChoice.css";
+import { socket } from "../../../socket";
 
 function MultipleChoiceQuestion(props) {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -7,6 +8,10 @@ function MultipleChoiceQuestion(props) {
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
+
+  const handleSubmit = () => {
+    socket.emit("answering question", selectedOption);
+  }
 
   return (
     <div className="question-container">
@@ -27,7 +32,7 @@ function MultipleChoiceQuestion(props) {
           </li>
         ))}
       </ul>
-      <button type="submit" className="submit-button">
+      <button type="submit" className="submit-button" onClick = {handleSubmit}>
         Submit
       </button>
     </div>

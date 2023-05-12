@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./FreeResponse.css"
+import { socket } from '../../../socket';
 
 const FreeResponse = ({ question }) => {
   const [response, setResponse] = useState('');
@@ -11,6 +12,7 @@ const FreeResponse = ({ question }) => {
   const handleSubmit = () => {
     // Handle the form submission or any other logic here
     console.log('Submitted response:', response);
+    socket.emit("answering question", response);
   };
 
   return (

@@ -22,6 +22,7 @@ function NoSession() {
       console.log("teacher started session");
       console.log(overall_class_code);
       console.log(class_code);
+      socket.emit("teacher started session");
       if (overall_class_code === class_code) {
         navigate("/waiting");
       }
@@ -29,7 +30,7 @@ function NoSession() {
 
   socket
     .off("student joined room")
-    .on("student joind room", (class_code) => {
+    .on("student joined room", () => {
       console.log("student joined room");
       navigate("/waiting");
   });
