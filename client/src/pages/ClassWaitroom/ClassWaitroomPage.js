@@ -19,7 +19,7 @@ const App = () => {
 
     socket
       .off("students in room list")
-      .on("studentd in room list", (student_list) => {
+      .on("students in room list", (student_list) => {
         const students_in_class = [student_list].map((c) => ({ name: c }));
         console.log(students_in_class);
         setUsers(students_in_class);
@@ -28,7 +28,7 @@ const App = () => {
     const handleStartSession = () => {
       // Handle starting the session
       socket.emit("starting questions");
-      navigate("/displayquestion")
+      navigate("/studentanswerdisplay")
       
     };
   

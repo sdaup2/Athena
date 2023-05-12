@@ -20,6 +20,7 @@ import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain.js";
 import UserSettings from "./pages/UserSettings/UserSettings";
 import CreateQuestion from "./pages/ClassQuestions/CreateQuestion";
 import DisplayQuestion from "./pages/ClassQuestions/DisplayQuestion";
+import StudentAnswersDisplayFunction from "./pages/StudentAnswerDisplay/StudentAnswerDisplay";
 
 function App() {
   function receivedFunction() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="usersettings" element={<UserSettings />} />
         <Route path="createquestion" element={<CreateQuestion />} />
         <Route path="displayquestion" element={<DisplayQuestion />} />
+        <Route path="studentanswerdisplay" element={<StudentAnswersDisplayFunction />} />
       </Routes>
     </div>
   );

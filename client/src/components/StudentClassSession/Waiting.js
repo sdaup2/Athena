@@ -7,14 +7,19 @@ import { useState } from "react";
 
 function Waiting() {
 
-  socket.emit("get class info");
   const navigate = useNavigate();
   const [class_name, setClassName] = useState([]);
 
   socket
     .off("nav to waitroom")
-    .on("nav to waitroom", (class_object, users_in_room) => {
+    .on("nav to waitroom", (class_object) => {
       setClassName(class_object.Name);
+    });
+
+  socket
+    .on("teacher started questions", () => {
+      console.log("got message")
+      navigate("/displayquestion")
     });
 
   return (

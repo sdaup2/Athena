@@ -5,16 +5,17 @@ import Footer from "../../components/Navigation/Footer";
 import Header from "../../components/Navigation/Header";
 import athena from "../../assets/athena.png";
 import { socket } from "../../socket";
+import { useNavigate } from "react-router-dom";
 
 function DisplayQuestion() {
   //change this to "MC" or "FR" and the page will change accordingly
 
   
-
-  const [questionType, setQuestionType] = useState("MC");
-  const [questionString, setQuestionString] = useState("HARD 1");
+  const navigate = useNavigate();
+  const [questionType, setQuestionType] = useState();
+  const [questionString, setQuestionString] = useState();
   const [imageConst, setImageConst] = useState(athena);
-  const [answerOptionsString, setAnswerOptionsString] = useState(["HARD 2", "HARD 3", "HARD 4"]);
+  const [answerOptionsString, setAnswerOptionsString] = useState([]);
 
   function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
@@ -31,34 +32,50 @@ function DisplayQuestion() {
       setQuestionString(question_object.QuestionText);
     });
 
+  socket 
+    .off("teacher ended session")
+    .on("teacher ended session", () => {
+      socket.emit("need to leave room");
+      navigate("/classes");
 
-  return (
-    <div>
-      <Header />
+    });
 
-      <>
-        {questionType === "MC" ? (
-          <div>
-            <h1>MultipleChoice</h1>
 
-            <MultipleChoice
-              questionText={questionString}
-              imageSrc={imageConst}
-              answerOptions={answerOptionsString}
-            />
-          </div>
-        ) : (
-          <div>
-            <h1>Free Response</h1>
-
-            <FreeResponse question={questionString} />
-          </div>
-        )}
-      </>
-
-      <Footer />
-    </div>
-  );
-}
-
-export default DisplayQuestion;
+    return (
+      <div>
+        <Header />
+        <>
+          {(() => {
+            if (questionType === "MC") {
+              return (
+                <div>
+                  <h1>MultipleChoice</h1>
+                  <MultipleChoice
+                    questionText={questionString}
+                    imageSrc={imageConst}
+                    answerOptions={answerOptionsString}
+                  />
+                </div>
+              );
+            } else if (questionType === "FR") {
+              return (
+                <div>
+                  <h1>Free Response</h1>
+                  <FreeResponse question={questionString} />
+                </div>
+              );
+            } else {
+              return (
+                <div>
+                  <h1>Waiting...</h1>
+                </div>
+              );
+            }
+          })()}
+          ;
+        </>
+        <Footer />
+      </div>
+    );
+  }
+  export default DisplayQuestion;
