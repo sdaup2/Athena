@@ -7,7 +7,7 @@ import athena from "../../assets/athena.png";
 
 function DisplayQuestion() {
   //change this to "MC" or "FR" and the page will change accordingly
-  const questionType = "FR";
+  const questionType = "dd";
 
   //these are what you change brooke
   const questionString = "HARD 1";
@@ -19,23 +19,36 @@ function DisplayQuestion() {
       <Header />
 
       <>
-        {questionType === "MC" ? (
-          <div>
-            <h1>MultipleChoice</h1>
+        {(() => {
+          if (questionType === "MC") {
+            return (
+              <div>
+                <h1>MultipleChoice</h1>
 
-            <MultipleChoice
-              questionText={questionString}
-              imageSrc={imageConst}
-              answerOptions={answerOptionsString}
-            />
-          </div>
-        ) : (
-          <div>
-            <h1>Free Response</h1>
+                <MultipleChoice
+                  questionText={questionString}
+                  imageSrc={imageConst}
+                  answerOptions={answerOptionsString}
+                />
+              </div>
+            );
+          } else if (questionType === "FR") {
+            return (
+              <div>
+                <h1>Free Response</h1>
 
-            <FreeResponse question={questionString} />
-          </div>
-        )}
+                <FreeResponse question={questionString} />
+              </div>
+            );
+          } else {
+            return (
+              <div>
+                <h1>Waiting...</h1>
+              </div>
+            );
+          }
+        })()}
+        ;
       </>
 
       <Footer />
