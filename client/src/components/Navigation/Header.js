@@ -22,14 +22,9 @@ function Header() {
             <Link to="/classes">Classes</Link>
           </li>
           <li>
-            {/* Endpoint to route to Question Sets component */}
-            <Link to="/questionsets">SandBox</Link>
-          </li>
-          <li>
             {/* Endpoint to route to Contact Us component */}
             <Link to="/class questions">Class Questions</Link>
           </li>
-
           <li>
             {/* Endpoint to route to Contact Us component */}
             <Link to="/view">Class Q View</Link>
