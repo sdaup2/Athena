@@ -12,7 +12,6 @@ import ClassWaitroomPage from "./pages/ClassWaitroom/ClassWaitroomPage";
 import ClassQuestions from "./pages/ClassQuestions/ClassQuestions";
 import ClassQuestionView from "./pages/ClassQuestionView/ClassQuestionView";
 import { Routes, Route } from "react-router-dom";
-import MultipleChoiceMain from "./components/Questions/MultipleChoiceMain.js";
 import UserSettings from "./pages/UserSettings/UserSettings";
 import CreateQuestion from "./pages/ClassQuestions/CreateQuestion";
 import DisplayQuestion from "./pages/ClassQuestions/DisplayQuestion";
@@ -36,7 +35,6 @@ function App() {
         <Route path="signup" element={<SignPage />} />
         <Route path="waiting" element={<Waiting />} />
         <Route path="nosession" element={<NoSession />} />
-        <Route path="multiplechoice" element={<MultipleChoiceMain />} />
         <Route path="usersettings" element={<UserSettings />} />
         <Route path="createquestion" element={<CreateQuestion />} />
         <Route path="displayquestion" element={<DisplayQuestion />} />
