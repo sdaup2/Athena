@@ -22,19 +22,17 @@ function ClassComponent(props) {
     console.log("asked back end for clases");
   };
 
-  socket
-    .off("class and role")
-    .on("class and role", (role) => {
-      console.log(role);
-      overall_role = role;
-      if (role === "teacher") {
-        socket.emit("need class QS info");
-        navigate("/class questions");
-      } else {
-        socket.emit("need student info");
-        navigate("/nosession");
-      }
-    });
+  socket.off("class and role").on("class and role", (role) => {
+    console.log(role);
+    overall_role = role;
+    if (role === "teacher") {
+      socket.emit("need class QS info");
+      navigate("/class questions");
+    } else {
+      socket.emit("need student info");
+      navigate("/nosession");
+    }
+  });
 
   return (
     <div className="class-component">
@@ -47,7 +45,6 @@ function ClassComponent(props) {
           {props.iconText}
         </div>
         <div className="class-name">{props.name}</div>
-        {/* <div className="class-code">{props.code}</div> */}
       </button>
     </div>
   );

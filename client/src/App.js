@@ -4,8 +4,6 @@ import { socket } from "./socket";
 import Home from "./pages/HomePage/Home";
 import Classes from "./pages/Classes/Classes";
 
-// import LoginPage from "./components/LoginPage/LoginPage";
-// import SignupPage from "./components/LoginPage/SignupPage";
 import LogPage from "./pages/LoginPage/LogPage";
 import SignPage from "./pages/LoginPage/SignPage";
 import Waiting from "./components/StudentClassSession/Waiting";
@@ -42,7 +40,10 @@ function App() {
         <Route path="usersettings" element={<UserSettings />} />
         <Route path="createquestion" element={<CreateQuestion />} />
         <Route path="displayquestion" element={<DisplayQuestion />} />
-        <Route path="studentanswerdisplay" element={<StudentAnswersDisplayFunction />} />
+        <Route
+          path="studentanswerdisplay"
+          element={<StudentAnswersDisplayFunction />}
+        />
         <Route path="sessionend" element={<SessionEnd />} />
       </Routes>
     </div>
