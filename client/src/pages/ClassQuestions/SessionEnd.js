@@ -3,6 +3,7 @@ import { CSVLink } from "react-csv";
 import Header from "../../components/Navigation/Header";
 import Footer from "../../components/Navigation/Footer";
 // "./Styles/SessionEnd.css";
+import { socket } from "../../socket";
 
 function SessionEnd() {
   const [questions, setQuestions] = useState(["Q1", "Q2", "Q3"]);
@@ -12,9 +13,15 @@ function SessionEnd() {
     Bob: ["HARD 4", "HARD 5", "HARD 6"],
     Jeffery: ["HARD 7", "HARD 8", "HARD 9"],
   });
+  
 
   // Convert responses dictionary to array
-  const responses = Object.keys(responsesDict).map((key) => responsesDict[key]);
+  let responses = Object.keys(responsesDict).map((key) => responsesDict[key]);
+
+  socket.on("full answer map", (answer_map) => {
+    let map_as_string = JSON.stringify(answer_map);
+    console.log(map_as_string);
+  });
 
   return (
     <div>
@@ -27,7 +34,7 @@ function SessionEnd() {
         <h1>
           <CSVLink
             data={responses}
-            headers={questions}
+            //headers={questions}
             filename={"responses.csv"}
             className="csv-download"
           >
