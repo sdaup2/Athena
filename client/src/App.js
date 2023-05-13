@@ -2,7 +2,6 @@ import * as React from "react";
 import { socket } from "./socket";
 
 import Home from "./pages/HomePage/Home";
-import QuestionSet from "./pages/QuestionSet/QuestionSet";
 import Classes from "./pages/Classes/Classes";
 
 // import LoginPage from "./components/LoginPage/LoginPage";
@@ -32,7 +31,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="classes" element={<Classes />} />
-        <Route path="questionsets" element={<QuestionSet />} />
         <Route path="waitroom" element={<ClassWaitroomPage />} />
         <Route path="class questions" element={<ClassQuestions />} />
         <Route path="view" element={<ClassQuestionView />} />
