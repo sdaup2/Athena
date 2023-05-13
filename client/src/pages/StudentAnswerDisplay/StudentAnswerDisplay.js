@@ -45,7 +45,7 @@ const testMap = {
   // add more students and answers here...
 };
 
-
+let allAnswers = {};
 
 function StudentAnswersDisplayFunction() {
 
@@ -59,6 +59,10 @@ function StudentAnswersDisplayFunction() {
   socket
     .off("next question")
     .on("next question", (question_object) => {
+      if (!(Object.keys(answerMap).length == 0)) {
+        allAnswers[JSON.parse(JSON.stringify(questionText))] = JSON.parse(JSON.stringify(answerMap));
+        console.log(allAnswers);
+      }
       setAnswerMap({});
       console.log(JSON.parse(JSON.stringify(question_object)));
       console.log(question_object.QuestionText);
@@ -76,7 +80,6 @@ function StudentAnswersDisplayFunction() {
       }
       let new_obj = JSON.parse(JSON.stringify(answerMap));
       new_obj[user_id] = answer;
-      console.log(new_obj);
       setAnswerMap(new_obj);
   });
 
@@ -87,6 +90,10 @@ function StudentAnswersDisplayFunction() {
     });
 
   const handleEndSession = () => {
+    allAnswers[JSON.parse(JSON.stringify(questionText))] = JSON.parse(JSON.stringify(answerMap));
+    socket.emit("sending question results", allAnswers);
+    console.log(JSON.stringify(allAnswers));
+    allAnswers = {}
     console.log("ending session");
     socket.emit("end session");
     navigate("/sessionend");
