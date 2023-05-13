@@ -1,0 +1,5 @@
+.button-group {
+    display: inline;
+    justify: space-between;
+    align: center;
+}

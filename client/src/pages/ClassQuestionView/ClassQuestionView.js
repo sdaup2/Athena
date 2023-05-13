@@ -4,20 +4,10 @@ import Footer from "../../components/Navigation/Footer";
 import Header from '../../components/Navigation/Header';
 import { useNavigate } from "react-router-dom";
 import { socket } from "../../socket";
+import "./ClassQuestionView.css";
 
 /**What a question set looks like when you click "view" on the specified question set, displays all questions */
-const currentQuestionSet = [
-  {
-    setName: "Random Question Set",
-    questions: [
-      { id: 1, name: "What is your favorite color?", answers: ["a"] },
-      { id: 2, name: "What color is the sky?", answers: ["this is a long answer ahahahahahahahahahah"] },
-      { id: 3, name: "Hnghhhhhhh?", answers: ["a", "b", "c"] },
-      { id: 4, name: "Hnghhhhhhh?", answers: ["a", "b", "c"] },
-      { id: 5, name: "Hnghhhhhhh?", answers: ["a", "b", "c"] },
-    ],
-  },
-];
+
 
 const Page = () => {
 
@@ -29,6 +19,10 @@ const Page = () => {
 
   const handleNewQuestion = () => {
     navigate("/createquestion");
+  }
+
+  const handleBackToSets = () => {
+    navigate("/class questions");
   }
 
   socket
@@ -44,8 +38,9 @@ const Page = () => {
   return (
     <div>
     <Header />
-    <div style = {{display: "inline", justify: "space-between", align: "center"}}>
+    <div className="button-group">
         <button onClick = {handleNewQuestion} style= {{borderLeft: "10px"}}>New Question</button>
+        <button onClick = {handleBackToSets} style= {{borderLeft: "10px"}}>Back to Sets</button>
     </div>
     <div>
         <ClassQuestion
