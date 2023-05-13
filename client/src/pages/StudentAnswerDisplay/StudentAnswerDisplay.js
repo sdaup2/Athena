@@ -8,42 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 
 
-/** Currently known as Sandbox in the Header */
-const testMap = {
-  "Jace": "A",
-  "Brooke": "B",
-  "Seth": "D",
-  "Ealynn" : "E",
-  "Jace2": "A",
-  "Brooke2": "B",
-  "Seth2": "D",
-  "Ealynn2" : "E",
-  "Jace3": "A",
-  "Brooke3": "B",
-  "Seth3": "D",
-  "Ealyn3n" : "E",
-  "Jac": "A",
-  "Brook": "B",
-  "Set3": "D",
-  "Ealyn4n" : "E",
-  "ace": "A",
-  "rooke": "B",
-  "eth": "D",
-  "alynn" : "E",
-  "ace2": "A",
-  "rooke2": "B",
-  "eth2": "D",
-  "alynn2" : "E",
-  "ace3": "A",
-  "rooke3": "B",
-  "eth3": "D",
-  "alyn3n" : "E",
-  "ac": "A",
-  "rook": "B",
-  "et3": "D",
-  "alyn4n" : "E"
-  // add more students and answers here...
-};
 
 
 
@@ -60,8 +24,6 @@ function StudentAnswersDisplayFunction() {
     .off("next question")
     .on("next question", (question_object) => {
       setAnswerMap({});
-      console.log(JSON.parse(JSON.stringify(question_object)));
-      console.log(question_object.QuestionText);
       setQuestionText(question_object.QuestionText);
       setCorrectAnswers(question_object.CorrectAnswers[0]);
   });

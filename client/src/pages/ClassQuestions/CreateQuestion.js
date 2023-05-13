@@ -92,7 +92,7 @@ function CreateQuestion() {
           </label>
           <br />
           <label>
-          Answer:
+          Correct Answer:
           <input
             type="text"
             value={answerText}
@@ -103,7 +103,7 @@ function CreateQuestion() {
         </>
       ) : (
         <label>
-          Answer:
+          Correct Answer:
           <input
             type="text"
             value={answerText}

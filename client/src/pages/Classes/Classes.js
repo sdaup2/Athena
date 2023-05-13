@@ -20,10 +20,9 @@ function Classes() {
   
     if (name) {
       socket.emit("add class", name);
-      //setClasses([...classes, newClass]);
     } else {
       
-      window.alert('Please enter a class name and class code.');
+      window.alert('Please enter a class name.');
     }
   };
 
