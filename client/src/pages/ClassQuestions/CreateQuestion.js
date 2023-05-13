@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { socket } from "../../socket";
+import { useNavigate } from "react-router-dom";
 
 function CreateQuestion() {
-  const [questionType, setQuestionType] = useState("multipleChoice"); // default to multiple choice
+
+  const navigate = useNavigate();
+
+  const [questionType, setQuestionType] = useState("MC"); // default to multiple choice
   const [questionText, setQuestionText] = useState("");
-  const [answerChoices, setAnswerChoices] = useState(["", "", "", ""]);
+  const [answerChoices, setAnswerChoices] = useState(["", "", ""]);
   const [answerText, setAnswerText] = useState("");
 
   const handleQuestionTypeChange = (event) => {
@@ -27,6 +32,15 @@ function CreateQuestion() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // handle submitting the question data here
+    let question = {};
+    question["QuestionText"] = questionText;
+    question["CorrectAnswers"] = [answerText];
+    question["ResponseType"] = questionType;
+    if(question.ResponseType === "MC") {
+      question["Options"] = answerChoices;
+    }
+    socket.emit("create question", question);
+    navigate("/view");
   };
 
   return (
@@ -34,8 +48,8 @@ function CreateQuestion() {
       <label>
         Question type:
         <select value={questionType} onChange={handleQuestionTypeChange}>
-          <option value="multipleChoice">Multiple choice</option>
-          <option value="freeResponse">Free response</option>
+          <option value="MC">Multiple choice</option>
+          <option value="FR">Free response</option>
         </select>
       </label>
       <br />
@@ -48,7 +62,7 @@ function CreateQuestion() {
         />
       </label>
       <br />
-      {questionType === "multipleChoice" ? (
+      {questionType === "MC" ? (
         <>
           <label>
             Answer choice 1:
@@ -78,13 +92,13 @@ function CreateQuestion() {
           </label>
           <br />
           <label>
-            Answer choice 4:
-            <input
-              type="text"
-              value={answerChoices[3]}
-              onChange={(event) => handleAnswerChoiceChange(event, 3)}
-            />
-          </label>
+          Answer:
+          <input
+            type="text"
+            value={answerText}
+            onChange={handleAnswerTextChange}
+          />
+        </label>
           <br />
         </>
       ) : (
