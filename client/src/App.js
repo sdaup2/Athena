@@ -9,7 +9,6 @@ import Classes from "./pages/Classes/Classes";
 import LogPage from "./pages/LoginPage/LogPage";
 import SignPage from "./pages/LoginPage/SignPage";
 import Waiting from "./components/StudentClassSession/Waiting";
-import Live from "./components/StudentClassSession/Live";
 import NoSession from "./components/StudentClassSession/NoSession";
 import ClassWaitroomPage from "./pages/ClassWaitroom/ClassWaitroomPage";
 import ClassQuestions from "./pages/ClassQuestions/ClassQuestions";
@@ -38,7 +37,6 @@ function App() {
         <Route path="login" element={<LogPage />} />
         <Route path="signup" element={<SignPage />} />
         <Route path="waiting" element={<Waiting />} />
-        <Route path="live" element={<Live />} />
         <Route path="nosession" element={<NoSession />} />
         <Route path="multiplechoice" element={<MultipleChoiceMain />} />
         <Route path="usersettings" element={<UserSettings />} />
